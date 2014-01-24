@@ -16,6 +16,7 @@ class QrcodesController < ApplicationController
 
     qrcode = Qrcode.where( imagename:imagename ).first_or_initialize
     qrcode.url = url
+    qrcode.num_qrcodes_downloads += 1
     qrcode.qrcode = qrcode_img.to_string
     qrcode.save!
 
