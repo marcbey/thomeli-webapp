@@ -3,4 +3,5 @@ Thomeli2Webapp::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   get '/qrcode', to: 'qrcodes#generate'
+  get '/photo', to: 'photos#download'
 end

@@ -14,14 +14,16 @@ ActiveAdmin.register Qrcode do
    column :imagename
    column :url
    column :created_at
+   column :photo_available do |qrcode|
+     photo_url = Rails.root.join( 'photos', qrcode.imagename )
+     photo = File.exists?( photo_url )
+   end
    default_actions
   end
 
   show do |qrcode|
     attributes_table do
       row :id
-      row :imagename
-      row :imagepath
       row :url
       row :created_at
       row :updated_at
@@ -29,6 +31,11 @@ ActiveAdmin.register Qrcode do
       row :num_photo_downloads
       row :qr_code do
         image_tag qrcode.qrcode.url
+      end
+      row :photo do
+        photo_url = Rails.root.join( 'photos', qrcode.imagename )
+        photo = File.exists?( photo_url )
+        image_tag qrcode.url if photo
       end
     end
     active_admin_comments

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140124164459) do
+ActiveRecord::Schema.define(:version => 20140124225952) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -52,8 +52,12 @@ ActiveRecord::Schema.define(:version => 20140124164459) do
     t.string   "url"
     t.string   "qrcode_uid"
     t.string   "qrcode_name"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.integer  "num_qrcodes_downloads", :default => 0
+    t.integer  "num_photo_downloads",   :default => 0
+    t.boolean  "photo_available",       :default => false
+    t.string   "token"
   end
 
 end
