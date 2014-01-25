@@ -1,6 +1,6 @@
 ActiveAdmin.register Qrcode do
   menu :priority => 1
-  actions :all, :except => [:edit]
+  actions :all, :except => [:edit, :create]
 
   filter :imagename
   filter :imagepath
