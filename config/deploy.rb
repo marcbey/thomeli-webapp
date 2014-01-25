@@ -10,6 +10,8 @@ set :repo_url, 'git@github.com:marcbey/thomeli-webapp.git'
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/rails'
 
+set :rbenv_ruby, File.read('.ruby-version').strip
+
 # Default value for :scm is :git
 # set :scm, :git
 
@@ -54,4 +56,32 @@ namespace :deploy do
     end
   end
 end
+
+# namespace :unicorn do
+#   desc 'Stop Unicorn'
+#   task :stop do
+#     on roles(:app) do
+#       execute "kill -HUP /home/rails/current/tmp/pids/unicorn.pid"
+#     end
+#   end
+#
+#   desc 'Start Unicorn'
+#   task :start do
+#     on roles(:app) do
+#       execute "cd /home/rails/current/ && RAILS_ENV=production BUNDLE_GEMFILE=/home/rails/current/Gemfile bundle exec unicorn -c /home/rails/current/config/unicorn/production.rb -E production -D"
+#     end
+#   end
+#
+#   desc 'Restart Unicorn'
+#   task :restart do
+#     on roles(:app) do
+#       sudo '/etc/init.d/unicorn restart'
+#     end
+#   end
+# #
+# #   desc 'Restart Unicorn'
+# #   task :restart
+# #   before :restart, :stop
+# #   before :restart, :start
+# end
 

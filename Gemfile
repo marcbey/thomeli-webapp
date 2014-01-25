@@ -5,8 +5,7 @@ gem 'rails', '3.2.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
+gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -44,10 +43,10 @@ gem 'activeadmin'
 gem 'dragonfly'
 
 group :development do
+  gem 'sqlite3'
   gem 'capistrano',  '~> 3.1'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-bundler'
   gem 'capistrano-rbenv'
-  # gem 'capistrano-unicorn', :require => false, 
-    # :git => 'git://github.com/wangsy/capistrano-unicorn.git'
+  gem 'capistrano-unicorn', :require => false, :git => 'git://github.com/wangsy/capistrano-unicorn.git'
 end
