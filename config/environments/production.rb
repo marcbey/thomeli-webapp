@@ -67,5 +67,5 @@ Thomeli2Webapp::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.request_photo_url = 'http://188.226.132.24/photo'
+  config.request_photo_url = 'http://95.85.47.196/photo'
 end
