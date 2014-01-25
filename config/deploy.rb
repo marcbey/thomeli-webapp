@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:marcbey/thomeli-webapp.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/rails'
+set :deploy_to, '/home/rails/thomeli-webapp'
 
 set :rbenv_ruby, File.read('.ruby-version').strip
 set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
@@ -47,6 +47,7 @@ namespace :deploy do
   end
 
   after :publishing, :restart
+  after :publishing, 'unicorn:restart'
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do

@@ -1,5 +1,5 @@
 # Set your full path to application.
-app_path = "/home/rails/current"
+app_path = "/home/rails/thomeli-webapp/current"
 
 # Set unicorn options
 worker_processes 3
