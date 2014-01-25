@@ -44,7 +44,6 @@ gem 'activeadmin'
 gem 'dragonfly'
 
 group :development do
-  gem 'sqlite3'
   gem 'capistrano',  '~> 3.1'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-bundler'
