@@ -21,7 +21,7 @@ class QrcodesController < ApplicationController
     qrcode.qrcode = qrcode_img.to_string
     qrcode.save!
 
-    send_data qrcode_img, filename: "qrcode.png"
+    send_data qrcode_img, filename: 'qrcode.png', type: 'image/png', disposition: 'inline'
   end
 end
 
