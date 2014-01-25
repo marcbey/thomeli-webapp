@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/wangsy/capistrano-unicorn.git
+  revision: bf75a238fde0cb8362c905e70103794d23ad5190
+  specs:
+    capistrano-unicorn (0.3.2)
+      capistrano (~> 3.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -196,6 +203,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails (~> 1.1)
   capistrano-rvm
+  capistrano-unicorn!
   coffee-rails (~> 3.2.1)
   dragonfly
   jquery-rails (= 2.3.0)

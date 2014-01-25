@@ -36,14 +36,18 @@ gem 'unicorn'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
-#
-#
+
+
 gem 'rqrcode'
 gem 'rqrcode_png'
 gem 'activeadmin'
 gem 'dragonfly'
 
-gem 'capistrano',  '~> 3.1'
-gem 'capistrano-rails', '~> 1.1'
-gem 'capistrano-bundler'
-gem 'capistrano-rvm'
+group :development do
+  gem 'capistrano',  '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  gem 'capistrano-unicorn', :require => false, 
+    :git => 'git://github.com/wangsy/capistrano-unicorn.git'
+end
