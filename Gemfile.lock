@@ -118,7 +118,6 @@ GEM
       polyamorous (~> 0.5.0)
     mime-types (1.25.1)
     multi_json (1.8.4)
-    mysql2 (0.3.15)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.7.0)
@@ -208,7 +207,6 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   dragonfly
   jquery-rails (= 2.3.0)
-  mysql2
   rails (= 3.2.0)
   rqrcode
   rqrcode_png
