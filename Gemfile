@@ -42,6 +42,7 @@ gem 'rqrcode'
 gem 'rqrcode_png'
 gem 'activeadmin'
 gem 'dragonfly'
+gem 'slim'
 
 group :development do
   gem 'capistrano',  '~> 3.1'
