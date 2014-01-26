@@ -34,3 +34,4 @@ pickle-email-*.html
 .project
 .DS_Store
 config/initializers/secret_token.rb
+photos/*
