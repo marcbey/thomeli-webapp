@@ -35,7 +35,7 @@ ActiveAdmin.register Qrcode do
       row :photo do
         photo_url = Rails.root.join( 'photos', qrcode.imagename )
         photo = File.exists?( photo_url )
-        image_tag qrcode.url + '?internal=yes' if photo
+        image_tag qrcode.url + '&internal=yes' if photo
       end
     end
     active_admin_comments
