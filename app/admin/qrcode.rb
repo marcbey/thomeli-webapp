@@ -15,8 +15,7 @@ ActiveAdmin.register Qrcode do
    column :url
    column :created_at
    column :photo_available do |qrcode|
-     photo_url = Rails.root.join( 'photos', qrcode.imagename )
-     photo = File.exists?( photo_url )
+     PhotoManager.new( qrcode.imagename ).photo_exists?
    end
    default_actions
   end
@@ -33,9 +32,9 @@ ActiveAdmin.register Qrcode do
         image_tag qrcode.qrcode.url
       end
       row :photo do
-        photo_url = Rails.root.join( 'photos', qrcode.imagename )
-        photo = File.exists?( photo_url )
-        image_tag qrcode.url + '&internal=yes' if photo
+        if PhotoManager.new( qrcode.imagename ).photo_exists?
+          image_tag internal_qrcode_url( qrcode )
+        end
       end
     end
     active_admin_comments

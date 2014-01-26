@@ -1,17 +1,7 @@
 class PhotosController < ApplicationController
   def download
-    token = params[:token]
-    raise ArgumentError if token.blank?
+    photo_manager = PhotoManager.photo_with_token( params[:token] )
 
-    qrcode = Qrcode.where( token: token ).first!
-
-    imagename = qrcode.imagename
-    photo_url = Rails.root.join( 'photos', imagename )
-    photo = File.read( photo_url )
-
-    qrcode.num_photo_downloads += 1 unless params[:internal].present?
-    qrcode.save!
-
-    send_data photo, filename: imagename
+    send_data photo_manager.photo, filename: photo_manager.photo_name
   end
 end
