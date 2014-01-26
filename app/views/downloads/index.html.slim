@@ -1,6 +1,13 @@
 h1 Hallo lieber Kunde :-)
 h2 Wie wollen Sie ihr Bild haben?
 
-a> href='#{photo_url( @qrcode )}' im Browser anzeigen
-a> href='#{photo_url_inline( @qrcode )}' herunterladen
+a> href='#{photo_url( @qrcode )}' herunterladen
+a> href='#{photo_url_inline( @qrcode )}' im Browser anzeigen
+form method="POST"
+  label An diese E-Mail-Addresse schicken:
+  input type="text" name="email"
+  input type="hidden" token="#{params[:token]}"
+  input type="hidden" csrf-token="#{form_authenticity_token}"
+  button Senden
+
 
