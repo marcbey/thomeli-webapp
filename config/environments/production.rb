@@ -51,7 +51,6 @@ Thomeli2Webapp::Application.configure do
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
   
-  config.action_mailer.default_url_options = { host:  '188.226.132.24' }
 
   # Enable threaded mode
   # config.threadsafe!
@@ -67,5 +66,8 @@ Thomeli2Webapp::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.request_photo_url = 'http://95.85.47.196/photo'
+  service_address = '95.85.47.196'
+  config.service_address = service_address
+  config.request_photo_url = "http://#{service_address}/photo"
+  config.action_mailer.default_url_options = { host: service_address }
 end
