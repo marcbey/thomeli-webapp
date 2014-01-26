@@ -8,11 +8,11 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Recent Photos" do
           ul do
             Qrcode.recent( 20 ).map do |qrcode|
-              li link_to( qrcode.imagename, admin_qrcode_path( qrcode ))
+              li link_to( qrcode.photo_name, admin_qrcode_path( qrcode ))
             end
           end
         end
-      end
+      end:
 
       column do
         panel "Info" do

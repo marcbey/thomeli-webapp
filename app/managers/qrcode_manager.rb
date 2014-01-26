@@ -19,7 +19,7 @@ class QrcodeManager
   end
 
   def initialize_qrcode
-    qrcode = Qrcode.where( imagename: self.photo_name ).first_or_initialize
+    qrcode = Qrcode.where( photo_name: self.photo_name ).first_or_initialize
 
     qrcode.url = self.url
     qrcode.token = self.token

@@ -14,7 +14,7 @@ class PhotoManager
     raise ArgumentError if token_string.blank?
 
     qrcode = Qrcode.where( token: token_string ).first!
-    photo_manager = new( qrcode.imagename )
+    photo_manager = new( qrcode.photo_name )
 
     qrcode.num_photo_downloads += 1 if not internal
     qrcode.save!

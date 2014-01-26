@@ -2,7 +2,7 @@ ActiveAdmin.register Qrcode do
   menu :priority => 1
   actions :index, :show, :destroy
 
-  filter :imagename
+  filter :photo_name
   filter :imagepath
   filter :url
   filter :created_at
@@ -11,11 +11,11 @@ ActiveAdmin.register Qrcode do
   index do
    selectable_column
    column :id
-   column :imagename
+   column :photo_name
    column :url
    column :created_at
    column :photo_available do |qrcode|
-     PhotoManager.new( qrcode.imagename ).photo_exists?
+     PhotoManager.new( qrcode.photo_name ).photo_exists?
    end
    default_actions
   end
@@ -32,7 +32,7 @@ ActiveAdmin.register Qrcode do
         image_tag qrcode.qrcode.url
       end
       row :photo do
-        if PhotoManager.new( qrcode.imagename ).photo_exists?
+        if PhotoManager.new( qrcode.photo_name ).photo_exists?
           image_tag internal_qrcode_url( qrcode )
         end
       end
