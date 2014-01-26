@@ -4,4 +4,6 @@ Thomeli2Webapp::Application.routes.draw do
 
   get '/qrcode', to: 'qrcodes#generate'
   get '/photo', to: 'photos#download'
+
+  resources :downloads, only: [:index, :create]
 end

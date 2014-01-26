@@ -11,6 +11,12 @@ class QrcodeManager
     @token = token
   end
 
+  def self.qrcode_by_token( token )
+    raise ArgumentError, 'Token is missing' if token.blank?
+
+    Qrcode.where( token: token ).first!
+  end
+
   def qrcode_image
     @qrcode_image ||= begin
       qrcode_image = RQRCode::QRCode.new( self.url, :size => 10, :level => :h ).to_img
