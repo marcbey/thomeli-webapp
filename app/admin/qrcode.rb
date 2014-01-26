@@ -33,7 +33,7 @@ ActiveAdmin.register Qrcode do
       end
       row :photo do
         if PhotoManager.new( qrcode.photo_name ).photo_exists?
-          image_tag internal_qrcode_url( qrcode )
+          image_tag internal_photo_url( qrcode )
         end
       end
     end

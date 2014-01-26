@@ -5,7 +5,7 @@ class QrcodeManager
     raise ArgumentError, 'Token is missing' if token.blank?
     raise ArgumentError, 'Photo Name is missing' if photo_name.blank?
 
-    base_url = Rails.configuration.request_photo_url
+    base_url = Rails.configuration.downloads_url
     @url = "#{base_url}?token=#{token}"
     @photo_name = photo_name
     @token = token

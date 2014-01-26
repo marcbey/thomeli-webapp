@@ -8,7 +8,7 @@ class TokenManager
 
     @photo_name = photo_name
     @secret = Rails.configuration.photo_secret
-    @base_url = Rails.configuration.request_photo_url
+    @base_url = Rails.configuration.downloads_url
   end
 
   def url
