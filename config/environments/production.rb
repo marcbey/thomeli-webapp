@@ -68,6 +68,6 @@ Thomeli2Webapp::Application.configure do
 
   service_address = '95.85.47.196'
   config.service_address = service_address
-  config.request_photo_url = "http://#{service_address}/photo"
+  config.request_photo_url = "http://#{service_address}/downloads"
   config.action_mailer.default_url_options = { host: service_address }
 end

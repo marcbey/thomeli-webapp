@@ -35,5 +35,5 @@ Thomeli2Webapp::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
   
-  config.request_photo_url = 'http://localhost:3000/photo'
+  config.request_photo_url = 'http://localhost:3000/downloads'
 end
