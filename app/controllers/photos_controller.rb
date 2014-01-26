@@ -9,7 +9,7 @@ class PhotosController < ApplicationController
     photo_url = Rails.root.join( 'photos', imagename )
     photo = File.read( photo_url )
 
-    qrcode.num_photo_downloads += 1
+    qrcode.num_photo_downloads += 1 unless params[:internal].present?
     qrcode.save!
 
     send_data photo, filename: imagename
