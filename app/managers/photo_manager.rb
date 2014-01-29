@@ -1,4 +1,5 @@
 class PhotoManager
+  include Skeptick
   attr_reader :photo_path, :photo_name
 
   def initialize( photo_name )
@@ -23,10 +24,23 @@ class PhotoManager
   end
 
   def photo
+    return test_png
     @photo ||= File.read( self.photo_path )
   end
 
   def photo_exists?
     @photo_exists ||= File.exists?( self.photo_path )
+  end
+
+  def test_png
+    text = image do
+      canvas :none, size: '395x110'
+      font   'Handwriting - Dakota Regular'
+      set    :pointsize, 90
+      set    :fill, 'gradient:#37e-#007'
+      write  'Skeptick', left: left, top: top
+      apply  :blur, '0x0.7'
+    end
+    text.build
   end
 end

@@ -18,6 +18,9 @@ class QrcodeManager
   end
 
   def qrcode_image
+    image = QrcodeImage.new( url )
+    return image.read
+
     @qrcode_image ||= begin
       qrcode_image = RQRCode::QRCode.new( self.url, :size => 10, :level => :h ).to_img
       qrcode_image.resize( 300, 300 )
@@ -30,7 +33,7 @@ class QrcodeManager
     qrcode.url = self.url
     qrcode.token = self.token
     qrcode.num_qrcodes_downloads += 1
-    qrcode.qrcode = self.qrcode_image.to_string
+    # qrcode.qrcode = self.qrcode_image.to_string
     qrcode.save!
 
     return qrcode
