@@ -2,7 +2,7 @@ class QrcodesController < ApplicationController
   def generate
     photo_name = params[:photo_name]
 
-    token_manager = TokenManager.new( photo_name )
+    token_manager = TokenManager.new
     qrcode_manager = QrcodeManager.new( token_manager.token, photo_name )
     qrcode_manager.initialize_qrcode
 
