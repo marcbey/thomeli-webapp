@@ -7,3 +7,4 @@ class RenameImagenameToPhotoName < ActiveRecord::Migration
     rename_column :qrcodes, :photo_name, :imagename
   end
 end
+
