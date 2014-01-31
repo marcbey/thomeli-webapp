@@ -43,7 +43,6 @@ gem 'rqrcode_png'
 gem 'activeadmin'
 gem 'dragonfly'
 gem 'slim'
-gem 'skeptick'
 
 group :development do
   gem 'capistrano',  '~> 3.1'
