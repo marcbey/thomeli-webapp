@@ -1,5 +1,5 @@
 class QrcodeManager
-  attr_reader :qrcode, :url, :token, :photo_name
+  attr_reader :url, :token, :photo_name, :height, :width
 
   def initialize( token, photo_name )
     raise ArgumentError, 'Token is missing' if token.blank?
@@ -9,33 +9,23 @@ class QrcodeManager
     @url = "#{base_url}?token=#{token}"
     @photo_name = photo_name
     @token = token
+
+    @height = 300
+    @width = 300
   end
 
   def self.qrcode_by_token( token )
     raise ArgumentError, 'Token is missing' if token.blank?
 
-    Qrcode.where( token: token ).first!
+    Asset.where( token: token ).first!
   end
 
   def qrcode_image
-    image = QrcodeImage.new( url )
-    return image.read
-
     @qrcode_image ||= begin
       qrcode_image = RQRCode::QRCode.new( self.url, :size => 10, :level => :h ).to_img
-      qrcode_image.resize( 300, 300 )
+      qrcode_image.resize( self.height, self.width )
     end
   end
 
-  def initialize_qrcode
-    qrcode = Qrcode.where( photo_name: self.photo_name ).first_or_initialize
-
-    qrcode.url = self.url
-    qrcode.token = self.token
-    qrcode.num_qrcodes_downloads += 1
-    # qrcode.qrcode = self.qrcode_image.to_string
-    qrcode.save!
-
-    return qrcode
-  end
 end
+

@@ -1,9 +1,8 @@
-ActiveAdmin.register Qrcode do
+ActiveAdmin.register Asset do
   menu :priority => 1
   actions :index, :show, :destroy
 
   filter :photo_name
-  filter :imagepath
   filter :url
   filter :created_at
   filter :updated_at
@@ -20,7 +19,7 @@ ActiveAdmin.register Qrcode do
    default_actions
   end
 
-  show do |qrcode|
+  show do |asset|
     attributes_table do
       row :id
       row :url

@@ -2,7 +2,7 @@ class TokenManager
   attr_reader :unicator
 
   def initialize
-    @unicator = lambda{ |token| Qrcode.where( token: token ).count.zero? }
+    @unicator = lambda{ |token| Asset.where( token: token ).count.zero? }
   end
 
   def token
