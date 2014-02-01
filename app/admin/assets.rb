@@ -13,8 +13,8 @@ ActiveAdmin.register Asset do
    column :photo_name
    column :url
    column :created_at
-   column :photo_available do |qrcode|
-     PhotoManager.new( qrcode.photo_name ).photo_exists?
+   column :photo_available do |asset|
+     PhotoManager.new( asset.photo_name ).photo_image_exists?
    end
    default_actions
   end
@@ -28,11 +28,11 @@ ActiveAdmin.register Asset do
       row :num_qrcodes_downloads
       row :num_photo_downloads
       row :qr_code do
-        image_tag qrcode.qrcode.url
+        image_tag asset.qrcode.url
       end
       row :photo do
-        if PhotoManager.new( qrcode.photo_name ).photo_exists?
-          image_tag internal_photo_url( qrcode )
+        if PhotoManager.new( asset.photo_name ).photo_image_exists?
+          image_tag asset.photo.url
         end
       end
     end

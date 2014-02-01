@@ -5,10 +5,10 @@ ActiveAdmin.register_page "Dashboard" do
   content :title => proc{ I18n.t("active_admin.dashboard") } do
     columns do
       column do
-        panel "Recent Photos" do
+        panel "Recent Assets" do
           ul do
-            Qrcode.recent( 20 ).map do |qrcode|
-              li link_to( qrcode.photo_name, admin_qrcode_path( qrcode ))
+            Asset.recent( 20 ).map do |asset|
+              li link_to( asset.photo_name, admin_asset_path( asset ))
             end
           end
         end
@@ -16,7 +16,7 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Info" do
-          para "There are currently #{Qrcode.count} qrcodes available"
+          para "There are currently #{Asset.count} assets available"
         end
       end
     end
