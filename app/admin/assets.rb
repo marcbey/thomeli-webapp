@@ -14,7 +14,7 @@ ActiveAdmin.register Asset do
    column :url
    column :created_at
    column :photo_available do |asset|
-     PhotoManager.new( asset.photo_name ).photo_image_exists?
+     asset.photo.present?
    end
    default_actions
   end
@@ -31,7 +31,7 @@ ActiveAdmin.register Asset do
         image_tag asset.qrcode.url
       end
       row :photo do
-        if PhotoManager.new( asset.photo_name ).photo_image_exists?
+        if asset.photo.present?
           image_tag asset.photo.url
         end
       end
