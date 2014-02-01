@@ -31,7 +31,9 @@ class PhotoManager
   end
 
   def remove_photo_from_drop_folder
-    File.delete( @photo_path )
+    if self.photo_image_exists?
+      File.delete( @photo_path )
+    end
   end
 end
 
