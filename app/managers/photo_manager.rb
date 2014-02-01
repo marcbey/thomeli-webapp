@@ -29,5 +29,9 @@ class PhotoManager
   def photo_image_exists?
     @photo_image_exists ||= File.exists?( self.photo_path )
   end
+
+  def remove_photo_from_drop_folder
+    File.delete( @photo_path )
+  end
 end
 

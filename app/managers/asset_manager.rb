@@ -1,28 +1,29 @@
 class AssetManager
-  attr_reader :qrcode_image, :photo_image, :photo_name, :token, :url
+  attr_reader :qrcode_manager, :photo_manager, :photo_name
 
-  def initialize( qrcode_image, photo_image, photo_name, token, url )
-    @qrcode_image = qrcode_image
-    @photo_image = photo_image
+  def initialize( qrcode_manager, photo_manager, photo_name )
+    @qrcode_manager = qrcode_manager
+    @photo_manager = photo_manager
     @photo_name = photo_name
-    @token = token
-    @url = url
   end
 
   def save!
     asset = Asset.where( photo_name: self.photo_name ).first_or_initialize
 
     if asset.new_record?
-      asset.qrcode = self.qrcode_image.to_s
+      asset.qrcode = self.qrcode_manager.qrcode_image.to_s
       asset.qrcode.name = Asset::QRCODE_IMAGE_NAME
-      asset.photo = self.photo_image
+      asset.token = self.qrcode_manager.token
+      asset.url = self.qrcode_manager.url
+    end
+
+    if self.photo_manager.photo_image_exists?
+      asset.photo = self.photo_manager.photo_image
       asset.photo.name = self.photo_name
-      asset.token = self.token
-      asset.url = self.url
-    else
-      asset.num_qrcodes_downloads += 1
     end
 
     asset.save!
+
+    self.photo_manager.remove_photo_from_drop_folder
   end
 end
