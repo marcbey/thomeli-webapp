@@ -1,5 +1,6 @@
 class TokenManager
   attr_reader :unicator
+  attr_writer :token
 
   def initialize
     @unicator = lambda{ |token| Asset.where( token: token ).count.zero? }
