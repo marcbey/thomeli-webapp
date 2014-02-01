@@ -37,4 +37,5 @@ Thomeli2Webapp::Application.configure do
   
   config.photo_url = 'http://localhost:3000/photo'
   config.downloads_url = 'http://localhost:3000/downloads'
+  config.photos_drop_folder = Rails.root.join( 'photos' )
 end

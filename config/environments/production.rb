@@ -72,4 +72,5 @@ Thomeli2Webapp::Application.configure do
 
   config.photo_url = "http://#{service_address}/photo"
   config.downloads_url = "http://#{service_address}/downloads"
+  config.photos_drop_folder = Rails.root.join( 'photos' )
 end
