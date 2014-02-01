@@ -14,6 +14,7 @@ class AssetManager
 
     if asset.new_record?
       asset.qrcode = self.qrcode_image.to_s
+      asset.qrcode.name = Asset::QRCODE_IMAGE_NAME
       asset.photo = self.photo_image
       asset.photo.name = self.photo_name
       asset.token = self.token

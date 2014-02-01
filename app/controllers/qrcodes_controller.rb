@@ -13,7 +13,7 @@ class QrcodesController < ApplicationController
     asset_manager.save!
 
     send_data qrcode_manager.qrcode_image,
-              filename: 'qrcode.png',
+              filename: Asset::QRCODE_IMAGE_NAME,
               type: 'image/png', 
               disposition: 'inline'
   end
