@@ -1,17 +1,27 @@
 class AssetManager
-  def initialize
+  attr_reader :qrcode_image, :photo_image, :photo_name, :token, :url
+
+  def initialize( qrcode_image, photo_image, photo_name, token, url )
+    @qrcode_image = qrcode_image
+    @photo_image = photo_image
+    @photo_name = photo_name
+    @token = token
+    @url = url
   end
-  def initialize_qrcode
+
+  def save!
     asset = Asset.where( photo_name: self.photo_name ).first_or_initialize
 
-    # asset.photo_image = self.photo_image
-    asset.qrcode_image = self.qrcode_image
-
-    asset.code = self.token
-    asset.url = self.url
-    asset.num_qrcodes_downloads += 1
+    if asset.new_record?
+      asset.qrcode = self.qrcode_image.to_s
+      asset.photo = self.photo_image
+      asset.photo.name = self.photo_name
+      asset.token = self.token
+      asset.url = self.url
+    else
+      asset.num_qrcodes_downloads += 1
+    end
 
     asset.save!
   end
-  
 end
