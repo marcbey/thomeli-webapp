@@ -71,6 +71,6 @@ Thomeli2Webapp::Application.configure do
   config.action_mailer.default_url_options = { host: service_address }
 
   config.photo_url = "http://#{service_address}/photo"
-  config.downloads_url = "http://#{service_address}/downloads"
+  config.token_url = "http://#{service_address}"
   config.photos_drop_folder = Rails.root.join( 'photos' )
 end

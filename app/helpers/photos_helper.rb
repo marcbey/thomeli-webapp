@@ -1,13 +1,9 @@
 module PhotosHelper
-  def photo_url( qrcode )
-    Rails.configuration.photo_url + "?token=#{qrcode.token}"
+  def photo_url( asset )
+    Rails.configuration.photo_url + "/#{asset.token}"
   end
 
-  def photo_url_inline( qrcode )
-    Rails.configuration.photo_url + "?token=#{qrcode.token}&disposition=inline"
-  end
-  
-  def internal_photo_url( qrcode )
-    Rails.configuration.photo_url + "?token=#{qrcode.token}&internal=yes"
+  def photo_url_inline( asset )
+    Rails.configuration.photo_url + "/#{asset.token}?disposition=inline"
   end
 end

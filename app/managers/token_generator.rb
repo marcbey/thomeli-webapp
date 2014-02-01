@@ -7,7 +7,7 @@ module TokenGenerator
 
   BLOCKS = 5
   BLOCK_LENGTH = 4 # must be divisible by 2
-  SEPERATOR = '+'
+  SEPERATOR = '-'
 
   PREFIX_REGEX = /^([A-Z0-9]{2})([0-9])([A-Z])$/i
 

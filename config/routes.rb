@@ -3,7 +3,9 @@ Thomeli2Webapp::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   get '/qrcode', to: 'qrcodes#generate'
-  get '/photo', to: 'photos#download'
+  get '/download/:token', to: 'downloads#index'
+  get '/:token', to: 'tokens#index'
+  post '/:token', to: 'tokens#create'
 
   resources :downloads, only: [:index, :create]
 end

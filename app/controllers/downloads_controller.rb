@@ -1,16 +1,10 @@
 class DownloadsController < ApplicationController
-  protect_from_forgery :except => :create
-  before_filter :set_qrcode
-
   def index
-  end
+    asset = Asset.where( token: params[:token] ).first!
 
-  def create
-    UserMailer.send_photo( params[:email], params[:token] ).deliver
-    render action: 'index'
-  end
+    disposition = params[:disposition] || 'attachment'
 
-  def set_qrcode
-    @qrcode = QrcodeManager.qrcode_by_token( params[:token] )
+    send_data asset.photo.data, filename: asset.photo_name, disposition: disposition
   end
 end
+

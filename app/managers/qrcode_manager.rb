@@ -5,7 +5,7 @@ class QrcodeManager
     @token_manager = token_manager
     @photo_name = photo_name
 
-    @url = "#{Rails.configuration.downloads_url}/#{token}"
+    @url = "#{Rails.configuration.token_url}/#{token}"
     @height = 300
     @width = 300
   end

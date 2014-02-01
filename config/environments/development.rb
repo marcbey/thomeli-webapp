@@ -35,7 +35,7 @@ Thomeli2Webapp::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
   
-  config.photo_url = 'http://localhost:3000/photo'
-  config.downloads_url = 'http://localhost:3000/downloads'
+  config.photo_url = 'http://localhost:3000/download'
+  config.token_url = 'http://localhost:3000'
   config.photos_drop_folder = Rails.root.join( 'photos' )
 end
