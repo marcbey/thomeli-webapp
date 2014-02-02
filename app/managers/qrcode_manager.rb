@@ -20,7 +20,7 @@ class QrcodeManager
     @token ||= begin
       if asset = Asset.where( photo_name: photo_name ).first
         @qrcode_image = asset.qrcode.data
-        @self.token_manager.token = @token = asset.token
+        self.token_manager.token = @token = asset.token
       else
         @token = self.token_manager.token
       end
