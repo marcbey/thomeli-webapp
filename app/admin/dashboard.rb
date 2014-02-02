@@ -16,7 +16,10 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Info" do
-          para "There are currently #{Asset.count} assets available"
+          para "#{Asset.count} assets totally."
+          para "#{Asset.where( photo_name: nil ).count } assets without uploaded photos."
+          para "Total photos size is #{number_to_human_size( Asset.sum( :photo_size ))}."
+          para "Total photo downloads are #{Asset.sum( :num_photo_downloads )}."
         end
       end
     end
