@@ -23,11 +23,11 @@ ActiveAdmin.register Asset do
     attributes_table do
       row :id
       row :url do |asset|
-        link_to asset.url
+        link_to asset.url, asset.url
       end
       row :created_at
       row :updated_at
-      row :num_qrcodes_downloads
+      # row :num_qrcodes_downloads
       row :num_photo_downloads
       row :qr_code do
         image_tag asset.qrcode.url

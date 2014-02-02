@@ -7,6 +7,9 @@ class TokensController < ApplicationController
 
   def create
     UserMailer.send_photo( params[:email], @asset ).deliver
+
+    @asset.increment_num_photo_downloads!
+    
     render action: 'index'
   end
 
