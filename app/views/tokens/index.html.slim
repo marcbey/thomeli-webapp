@@ -1,12 +1,34 @@
-h1 Hallo lieber Kunde :-)
-h2 Wie wollen Sie ihr Bild haben?
+center
+  header #{image_tag 'melinat-photographie.png'}
 
-a> href='#{photo_url( @asset )}' herunterladen
-a> href='#{photo_url_inline( @asset )}' im Browser anzeigen
-form method="POST"
-  label An diese E-Mail-Addresse schicken:
-  input type="text" name="email"
-  input type="hidden" token="#{params[:token]}"
-  input type="hidden" csrf-token="#{form_authenticity_token}"
-  button Senden
+  #content
+    p 
+      |Download
+      br
+      |direkt im Browser
+    div
+      == link_to photo_url( @asset ) do
+        = image_tag 'click.png', id: 'hand-click'
+
+    p
+      |oder das Bild direkt an 
+      br
+      |eine E-Mail-Addresse senden.
+      br
+      |Bitte hier eintragen:
+
+    = image_tag 'hand-down.png', id: 'hand-down'
+
+    form method="POST"
+      input type="text" name="email"
+      input type="hidden" token="#{params[:token]}"
+      input type="hidden" csrf-token="#{form_authenticity_token}"
+      br
+      input type="image" src="#{asset_path( 'button-send.png' )}"
+
+  footer
+    #{link_to 'www.melinat.net', 'http://www.melinat.net'}
+    #{link_to 'Impressum', 'http://melinat.net/impressum'}
+    #{link_to 'AGB', 'http://melinat.net/agb'}
+
 
