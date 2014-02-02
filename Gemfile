@@ -49,5 +49,5 @@ group :development do
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-bundler'
   gem 'capistrano-rbenv'
-  gem 'capistrano-unicorn', :require => false, :git => 'git://github.com/wangsy/capistrano-unicorn.git'
+  gem 'capistrano-unicorn', :require => false, :git => 'git@github.com:marcbey/capistrano-unicorn.git'
 end
