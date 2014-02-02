@@ -22,7 +22,9 @@ ActiveAdmin.register Asset do
   show do |asset|
     attributes_table do
       row :id
-      row :url
+      row :url do |asset|
+        link_to asset.url
+      end
       row :created_at
       row :updated_at
       row :num_qrcodes_downloads
