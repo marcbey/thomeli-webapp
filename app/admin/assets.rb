@@ -13,8 +13,8 @@ ActiveAdmin.register Asset do
    column :photo_name
    column :url
    column :created_at
-   column :photo_available do |asset|
-     asset.photo.present?
+   column :thumbnail do |asset|
+     image_tag asset.photo.thumb( '50x50#' ).url
    end
    default_actions
   end
