@@ -1,4 +1,5 @@
 require 'dragonfly'
+require 'qrcode_embed_url_processor'
 
 # Configure
 Dragonfly.app.configure do
@@ -12,6 +13,8 @@ Dragonfly.app.configure do
   datastore :file,
     root_path: Rails.root.join('public/system/dragonfly', Rails.env),
     server_root: Rails.root.join('public')
+
+  processor :embed_url, QrcodeEmbedUrlProcessor.new
 end
 
 # Logger

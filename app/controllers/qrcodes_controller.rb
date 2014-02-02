@@ -8,9 +8,7 @@ class QrcodesController < ApplicationController
     asset_manager = AssetManager.new( qrcode_manager, photo_manager, photo_name )
     asset_manager.save!
 
-    send_data qrcode_manager.qrcode_image,
-              filename: Asset::QRCODE_IMAGE_NAME,
-              type: 'image/png', 
-              disposition: 'inline'
+    data = asset_manager.asset.qrcode.embed_url( asset_manager.asset, qrcode_manager.url ).data
+    send_data( data, filename: Asset::QRCODE_IMAGE_NAME, type: 'image/png', disposition: 'inline' )
   end
 end
