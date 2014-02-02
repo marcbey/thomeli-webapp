@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class TokensController < ApplicationController
   protect_from_forgery :except => :create
   before_filter :set_asset
@@ -6,10 +8,19 @@ class TokensController < ApplicationController
   end
 
   def create
-    UserMailer.send_photo( params[:email], @asset ).deliver
+    email = params[:email]
 
-    @asset.increment_num_photo_downloads!
-    
+    if email.present? and Devise.email_regexp.match( email )
+      UserMailer.send_photo( email, @asset ).deliver
+
+      @asset.increment_num_photo_downloads!
+   
+      flash[:notice] = "Das Photo wurde soeben an #{email} versendet!"
+    elsif email.present? and !Devise.email_regexp.match( email )
+
+      flash[:notice] = "Sorry, mit dieser E-Mail-Addresse können wir nichts anfangen"
+    end
+
     render action: 'index'
   end
 

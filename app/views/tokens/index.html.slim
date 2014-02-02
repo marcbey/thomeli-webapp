@@ -2,7 +2,7 @@ center
   header #{image_tag 'melinat-photographie.png'}
 
   #content
-    p 
+    p
       |Download
       br
       |direkt im Browser
@@ -11,11 +11,11 @@ center
         = image_tag 'click.png', id: 'hand-click'
 
     p
-      |oder das Bild direkt an 
+      |oder das Bild direkt an
       br
       |eine E-Mail-Addresse senden.
       br
-      |Bitte hier eintragen:
+      |Bitte hier eintragen.
 
     = image_tag 'hand-down.png', id: 'hand-down'
 
@@ -25,10 +25,13 @@ center
       input type="hidden" csrf-token="#{form_authenticity_token}"
       br
       input type="image" src="#{asset_path( 'button-send.png' )}"
+      
+      - if flash[:notice].present?
+        br
+        == flash[:notice]
 
   footer
     #{link_to 'www.melinat.net', 'http://www.melinat.net'}
     #{link_to 'Impressum', 'http://melinat.net/impressum'}
     #{link_to 'AGB', 'http://melinat.net/agb'}
-
 
