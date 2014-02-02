@@ -72,6 +72,7 @@ Thomeli2Webapp::Application.configure do
 
   config.photo_url = "http://#{service_address}/photo"
   config.token_url = "http://#{service_address}"
-  config.photos_drop_folder = '/home/photo'
+  config.photos_drop_folder = Pathname.new( '/home/photo' )
 end
+
 
