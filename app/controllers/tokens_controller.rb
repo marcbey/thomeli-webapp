@@ -2,7 +2,6 @@
 
 class TokensController < ApplicationController
   protect_from_forgery :except => :create
-  before_filter :set_asset
 
   def index
   end
@@ -11,9 +10,9 @@ class TokensController < ApplicationController
     email = params[:email]
 
     if valid_email_and_not_blacklisted
-      UserMailer.send_photo( email, @asset ).deliver
+      UserMailer.send_photo( email, self.asset ).deliver
 
-      @asset.increment_num_photo_downloads!
+      self.asset.increment_num_photo_downloads!
 
       flash[:notice] = "Das Photo wurde soeben an #{email} versendet!"
     elsif email_with_wrong_format
@@ -22,10 +21,6 @@ class TokensController < ApplicationController
     end
 
     render action: 'index'
-  end
-
-  def set_asset
-    @asset = Asset.where( token: params[:token] ).first!
   end
 
   def valid_email_and_not_blacklisted
