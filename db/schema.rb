@@ -59,9 +59,6 @@ ActiveRecord::Schema.define(:version => 20140202230650) do
     t.string   "token"
     t.string   "photo_uid"
     t.integer  "photo_size"
-    t.string   "photo_mime"
-    t.integer  "photo_height"
-    t.integer  "photo_width"
   end
 
   create_table "blacklisted_emails", :force => true do |t|
