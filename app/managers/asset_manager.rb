@@ -24,7 +24,7 @@ class AssetManager
 
     @asset.save!
 
-    self.photo_manager.remove_photo_from_drop_folder
+    #self.photo_manager.remove_photo_from_drop_folder
   end
 end
 
