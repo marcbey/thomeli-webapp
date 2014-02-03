@@ -70,7 +70,7 @@ Thomeli2Webapp::Application.configure do
   config.service_address = service_address
   config.action_mailer.default_url_options = { host: service_address }
 
-  config.photo_url = "http://#{service_address}/photo"
+  config.photo_url = "http://#{service_address}/download"
   config.token_url = "http://#{service_address}"
   config.photos_drop_folder = Pathname.new( '/home/photo' )
 end
