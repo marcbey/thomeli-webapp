@@ -14,7 +14,9 @@ ActiveAdmin.register Asset do
    column :url
    column :created_at
    column :thumbnail do |asset|
-     image_tag asset.photo.thumb( '50x50#' ).url
+     if asset.photo.present?
+       image_tag asset.photo.thumb( '50x50#' ).url
+     end
    end
    default_actions
   end
