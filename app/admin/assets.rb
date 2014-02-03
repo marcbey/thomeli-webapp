@@ -25,7 +25,11 @@ ActiveAdmin.register Asset do
     attributes_table do
       row :id
       row :url do |asset|
-        link_to asset.url, asset.url
+        if asset.photo.present?
+          link_to asset.url, asset.url
+        else
+          asset.url
+        end
       end
       row :created_at
       row :updated_at
