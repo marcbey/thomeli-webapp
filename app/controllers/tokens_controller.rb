@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class TokensController < ApplicationController
+  before_filter :set_asset
   protect_from_forgery :except => :create
 
   def index
@@ -10,9 +11,9 @@ class TokensController < ApplicationController
     email = params[:email]
 
     if valid_email_and_not_blacklisted
-      UserMailer.send_photo( email, self.asset ).deliver
+      UserMailer.send_photo( email, @asset ).deliver
 
-      self.asset.increment_num_photo_downloads!
+      @asset.increment_num_photo_downloads!
 
       flash[:notice] = "Das Photo wurde soeben an #{email} versendet!"
     elsif email_with_wrong_format
