@@ -17,7 +17,7 @@ ActiveAdmin.setup do |config|
   #
   # Note: Recommended image height is 21px to properly fit in the header
   #
-  # config.site_title_image = "/images/logo.png"
+  config.site_title_image = "/assets/logo.png"
 
   # == Default Namespace
   #
@@ -139,7 +139,7 @@ ActiveAdmin.setup do |config|
   #   config.register_stylesheet 'my_print_stylesheet.css', :media => :print
   #
   # To load a javascript file:
-  #   config.register_javascript 'my_javascript.js'
+  # config.register_javascript 'active_admin.js'
 
 
   # == CSV options
