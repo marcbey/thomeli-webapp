@@ -2,8 +2,11 @@ Thomeli2Webapp::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  get '/qrcode', to: 'qrcodes#generate'
+  get '/qrcode/image', to: 'qrcodes#image'
+  get '/qrcode/url', to: 'qrcodes#url'
+
   get '/download/:token', to: 'downloads#index'
+
   get '/:token', to: 'tokens#index'
   post '/:token', to: 'tokens#create'
 

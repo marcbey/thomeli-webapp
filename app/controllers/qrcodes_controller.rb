@@ -1,5 +1,5 @@
 class QrcodesController < ApplicationController
-  def generate
+  def image
     photo_name = params[:photo_name]
 
     token_manager = TokenManager.new
@@ -16,4 +16,12 @@ class QrcodesController < ApplicationController
 
     send_data( data, filename: Asset::QRCODE_IMAGE_NAME, type: 'image/png', disposition: 'inline' )
   end
+
+  def url
+    photo_name = params[:photo_name]
+    asset = Asset.where( photo_name: photo_name ).first!
+
+    render text: asset.url
+  end
 end
+
