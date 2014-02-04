@@ -103,7 +103,7 @@ GEM
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kgio (2.8.1)
+    kgio (2.9.0)
     libv8 (3.16.14.3)
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -217,4 +217,4 @@ DEPENDENCIES
   sqlite3
   therubyracer
   uglifier (>= 1.0.3)
-  unicorn
+  unicorn (~> 4.8)
