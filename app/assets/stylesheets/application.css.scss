@@ -12,6 +12,9 @@
  *= require scaffolds
 */
 
+$break-small: 320px;
+$break-large: 1200px;
+
 body {
   background-color: #3a414b;
   color: #cccfce;
@@ -36,11 +39,11 @@ a {
 }
 
 header {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 #content {
-  margin-top:30px;
+  margin-top:10px;
 }
 
 #content input[type="text"] {
@@ -49,11 +52,12 @@ header {
 }
 
 #content  input[type="image"]  {
-  margin-top:20px;
+  margin-top:10px;
 }
 
 footer {
-  margin-top:50px;
+  margin-top:30px;
+  font-size: smaller;
 }
 
 #hand-down {
@@ -64,3 +68,11 @@ footer {
   margin-left: -60px;
 }
 
+#content input[type="text"] {
+  @media screen and (max-width: $break-small) {
+    width: 450px;
+    height: 40px;
+  }
+  @media screen and (min-width: $break-large) {
+  }
+}
