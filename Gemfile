@@ -44,6 +44,7 @@ gem 'activeadmin'
 gem 'dragonfly'
 gem 'slim'
 gem 'whenever'
+gem 'exception_notification'
 
 group :development do
   gem 'capistrano',  '~> 3.1'

@@ -85,6 +85,9 @@ GEM
       multi_json (~> 1.0)
       rack
     erubis (2.7.0)
+    exception_notification (4.0.1)
+      actionmailer (>= 3.0.4)
+      activesupport (>= 3.0.4)
     execjs (2.0.2)
     formtastic (2.2.1)
       actionpack (>= 3.0)
@@ -212,6 +215,7 @@ DEPENDENCIES
   capistrano-unicorn!
   coffee-rails (~> 3.2.1)
   dragonfly
+  exception_notification
   jquery-rails (= 2.3.0)
   rails (= 3.2.15.rc3)
   rqrcode

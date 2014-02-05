@@ -73,6 +73,13 @@ Thomeli2Webapp::Application.configure do
   config.photo_url = "http://#{service_address}/download"
   config.token_url = "http://#{service_address}"
   config.photos_drop_folder = Pathname.new( '/home/photo' )
-end
 
+  config.middleware.use ExceptionNotification::Rack,
+    :email => {
+      :email_prefix => "[Thomeli-Webapp] ",
+      :sender_address => %{"notifier" <notifier@melinat.net>},
+      :exception_recipients => %w{marc@beyerlin.net}
+    }
+
+end
 
