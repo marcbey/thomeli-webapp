@@ -20,5 +20,19 @@ class Asset < ActiveRecord::Base
     num = self.num_photo_downloads + 1
     self.update_attributes( num_photo_downloads: num )
   end
+
+
+  def self.photo_empty_eq( selection )
+    if selection == 1
+      where( 'assets.photo_uid IS NOT NULL' )
+    elsif selection == 0
+      where( 'assets.photo_uid IS NULL' )
+    else
+      scoped
+    end
+  end
+
+  #re-define the search method:
+  search_method :photo_empty_eq, :type => :integer
 end
 

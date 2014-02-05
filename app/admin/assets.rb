@@ -3,6 +3,9 @@ ActiveAdmin.register Asset do
   actions :index, :show, :destroy
 
   filter :photo_name
+  filter :photo_empty, :label => 'Photo Available', :as => :select,
+    :collection => {:Yes => 1, :No => 0}
+
   filter :url
   filter :created_at
   filter :updated_at
