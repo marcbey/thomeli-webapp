@@ -6,6 +6,7 @@ center
       |Download
       br
       |direkt im Browser
+
     div
       == link_to photo_url( @asset ) do
         = image_tag 'click.png', id: 'hand-click'
@@ -19,16 +20,16 @@ center
 
     = image_tag 'hand-down.png', id: 'hand-down'
 
+    - if flash[:notice].present?
+      br
+      == flash[:notice]
+
     form method="POST"
       input type="text" name="email"
       input type="hidden" token="#{params[:token]}"
       input type="hidden" csrf-token="#{form_authenticity_token}"
       br
       input type="image" src="#{asset_path( 'button-send.png' )}"
-      
-      - if flash[:notice].present?
-        br
-        == flash[:notice]
 
   footer
     #{link_to 'www.melinat.net', 'http://www.melinat.net'}
