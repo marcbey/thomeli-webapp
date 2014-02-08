@@ -47,7 +47,6 @@ header {
 }
 
 #content input[type="text"] {
-  width: 250px;
   height: 20px;
 }
 
@@ -58,6 +57,15 @@ header {
 footer {
   margin-top:5px;
   font-size: smaller;
+}
+
+footer a {
+  margin: 5px;
+}
+
+.flash {
+  margin: 5px;
+  color: red;
 }
 
 #hand-down {
@@ -76,3 +84,9 @@ footer {
   @media screen and (min-width: $break-large) {
   }
 }
+
+#tipp {
+  color: grey;
+  font-size: smaller;
+}
+

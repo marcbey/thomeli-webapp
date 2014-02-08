@@ -12,10 +12,10 @@ class DeliverySelectionsController < ApplicationController
 
       @asset.increment_num_photo_downloads!
 
-      flash[:notice] = "Das Photo wurde soeben an #{email} versendet!"
+      flash[:notice] = t( :photo_wurde_gesendet, email: email ).html_safe
     elsif email_with_wrong_format
 
-      flash[:notice] = "Sorry, mit dieser E-Mail-Addresse können wir nichts anfangen"
+      flash[:notice] = t( :email_ist_falsch ).html_safe
     end
 
     render action: 'index'

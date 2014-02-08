@@ -8,7 +8,7 @@ class TokenVerificationsController < ApplicationController
     if @asset
       redirect_to delivery_selection_path( token: @asset.token )
     else
-      flash[:notice] = 'Sorry, dieses Token ist falsch :-('
+      flash[:notice] = t( :token_ist_falsch ).html_safe
       render action: :index
     end
   end

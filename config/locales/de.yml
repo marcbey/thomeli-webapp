@@ -1,0 +1,39 @@
+de:
+  download_direkt_im_browser: |
+    Download direkt im Browser:
+
+  direkt_an_email_senden : |
+    oder das Bild direkt an<br />eine E-Mail-Addresse senden.<br />Bitte hier eintragen:
+
+  photo_wurde_gesendet: |
+    Das Photo wurde soeben an %{email} versendet!
+
+  email_ist_falsch:
+    Sorry, mit dieser E-Mail-Addresse können wir nichts anfangen!
+
+  token_eingeben: |
+    Bitte hier den Photo-Token eingeben:
+
+  token_tipp: |
+    (Tipp: Der sieht in etwa aus: ABCD-EFGH-IJKL-MNOP)
+
+  token_ist_falsch:
+    Sorry, dieses Token ist falsch :-(
+
+  photo_email_from: |
+    thorsten@melinat.net
+
+  photo_email_subject: |
+    Ihr Bildle vom Thomeli ist da :-)
+
+  photo_email_body: |
+    Hallo.
+
+    Sie bekommen diese E-Mail, weil jemand auf http://photo.melinat.net dieses Photo 
+    per E-Mail an diese Addresse bestellt hat.
+
+    Wenn Sie ein Problem damit haben, wenden sie sich bitte an support@melinat.net.
+
+    Frohes Schaffen,
+    Thorsten Melinat
+

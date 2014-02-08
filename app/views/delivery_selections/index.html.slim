@@ -1,26 +1,18 @@
 #content.delivery_selection
-  p
-    |Download
-    br
-    |direkt im Browser
+  p #{raw t( :download_direkt_im_browser )}
 
   div
     == link_to photo_url( @asset ) do
       = image_tag 'click.png', id: 'hand-click'
 
-  p
-    |oder das Bild direkt an
-    br
-    |eine E-Mail-Addresse senden.
-    br
-    |Bitte hier eintragen.
+  p #{raw t( :direkt_an_email_senden )}
 
   = image_tag 'hand-down.png', id: 'hand-down'
 
   = flash_notice
 
   form method="POST" action="#{send_photo_in_email_path}"
-    input type="text" name="email"
+    input type="text" name="email" size="40"
     input type="hidden" token="#{params[:token]}"
     input type="hidden" csrf-token="#{form_authenticity_token}"
     br
