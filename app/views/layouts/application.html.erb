@@ -2,14 +2,23 @@
 <html>
 <head>
   <meta name="viewport" content="initial-scale=1">
-  <title>Thomeli2Webapp</title>
+  <title>thorsten melinat Photographie</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <center>
+    <header>
+      <%= image_tag( 'melinat-photographie.png' ) %>
+    </header>
+      <%= yield %>
+    <footer>
+      <%= link_to 'www.melinat.net', 'http://www.melinat.net' %>
+      <%= link_to 'Impressum', 'http://melinat.net/impressum' %>
+      <%= link_to 'AGB', 'http://melinat.net/agb' %>
+    </footer>
+  </center>
 </body>
 </html>
+
