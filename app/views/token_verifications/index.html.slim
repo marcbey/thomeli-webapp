@@ -1,0 +1,14 @@
+#content.token_verfication
+  p Bitte hier den Photo-Token eingeben:
+
+  = image_tag 'hand-down.png', id: 'hand-down'
+
+  = flash_notice
+
+  form method="POST" action="#{token_verification_path}"
+    input type="text" name="token"
+    input type="hidden" token="#{params[:token]}"
+    input type="hidden" csrf-token="#{form_authenticity_token}"
+    br
+    input type="image" src="#{asset_path( 'button-send.png' )}"
+

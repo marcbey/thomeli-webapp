@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title thorsten melinat Photographie
+    meta name="keywords" content="melinat photographie"
+    meta name="author" content="thorsten melinat"
+    link rel="icon" type="image/png" href="#{asset_path( '/favicon.ico' )}"
+    = stylesheet_link_tag( 'application', media: 'all' )
+    = javascript_include_tag( 'application' )
+    = csrf_meta_tags
+
+  body
+    center
+      header
+        = image_tag( 'melinat-photographie.png' )
+
+      = yield
+
+      footer
+        = link_to 'www.melinat.net', 'http://www.melinat.net'
+        = link_to 'Impressum', 'http://melinat.net/impressum'
+        = link_to 'AGB', 'http://melinat.net/agb'
+

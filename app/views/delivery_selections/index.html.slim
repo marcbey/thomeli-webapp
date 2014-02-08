@@ -1,4 +1,4 @@
-content
+#content.delivery_selection
   p
     |Download
     br
@@ -17,9 +17,7 @@ content
 
   = image_tag 'hand-down.png', id: 'hand-down'
 
-  - if flash[:notice].present?
-    br
-    == flash[:notice]
+  = flash_notice
 
   form method="POST" action="#{send_photo_in_email_path}"
     input type="text" name="email"
