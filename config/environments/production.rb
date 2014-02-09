@@ -66,7 +66,7 @@ Thomeli2Webapp::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  service_address = '95.85.47.196'
+  service_address = 'photo.melinat.net'
   config.service_address = service_address
   config.action_mailer.default_url_options = { host: service_address }
 
