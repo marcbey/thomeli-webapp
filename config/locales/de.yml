@@ -15,7 +15,7 @@ de:
     Bitte hier den Photo-Token eingeben:
 
   token_tipp: |
-    (Tipp: Der sieht in etwa aus: ABCD-EFGH-IJKL-MNOP)
+    (Tipp: Der sieht in etwa so aus: ABCD-EFGH-IJKL-MNOP-QRST)
 
   token_ist_falsch:
     Sorry, dieses Token ist falsch :-(
