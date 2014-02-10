@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.15.rc3'
+gem 'rails', '~> 3.2.16'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -20,7 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 # gem 'jquery-rails'
-gem 'jquery-rails', "2.3.0"
+gem 'jquery-rails', "~> 2.3.0"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -37,7 +37,6 @@ gem 'unicorn'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-
 gem 'rqrcode'
 gem 'rqrcode_png'
 gem 'activeadmin'
@@ -53,3 +52,4 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'capistrano-unicorn', :require => false, :git => 'git@github.com:marcbey/capistrano-unicorn.git'
 end
+
