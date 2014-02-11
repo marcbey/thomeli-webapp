@@ -12,17 +12,17 @@ de:
     Sorry, mit dieser E-Mail-Addresse können wir nichts anfangen!
 
   token_eingeben: |
-    Bitte hier den Photo-Token eingeben:
+    Bitte hier den Code eingeben:
 
   token_tipp: |
     (Tipp: Der sieht in etwa so aus: ABCD-EFGH-IJKL-MNOP-QRST)
 
   token_ist_falsch:
-    Sorry, dieses Token ist falsch :-(
+    Sorry, dieses Code ist falsch :-(
 
-  photo_email_from: thorsten@melinat.net
+  photo_email_from: info@melinat.net
 
-  photo_email_subject: Ihr Bildle vom Thomeli ist da :-)
+  photo_email_subject:  Ihre Bilddatei von thorsten melinat photographie
 
   photo_email_body: |
     Hallo.
@@ -30,8 +30,8 @@ de:
     Sie bekommen diese E-Mail, weil jemand auf http://photo.melinat.net dieses Photo 
     per E-Mail an diese Addresse bestellt hat.
 
-    Wenn Sie ein Problem damit haben, wenden sie sich bitte an support@melinat.net.
+    Wenn Sie ein Problem damit haben, wenden sie sich bitte an info@melinat.net.
 
-    Frohes Schaffen,
+    Freundliche Grüße,
     Thorsten Melinat
 
