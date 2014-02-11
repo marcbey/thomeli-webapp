@@ -9,7 +9,7 @@ class QrcodeManager
     @token_manager = token_manager
     @photo_name = photo_name
 
-    dimensions = dimensions.split( ',' )
+    dimensions = dimensions.to_s.split( ',' )
     @height = ( dimensions[0] || HEIGHT ).to_i
     @width  = ( dimensions[1] || WIDTH ).to_i
     @size   = ( dimensions[2] || SIZE ).to_i
