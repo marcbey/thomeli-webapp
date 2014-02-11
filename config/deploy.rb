@@ -37,6 +37,9 @@ set :linked_dirs, %w{photos bin log tmp/pids tmp/cache tmp/sockets vendor/bundle
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+before :deploy, 'unicorn:stop'
+after :deploy, 'unicorn:start'
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do
@@ -47,7 +50,6 @@ namespace :deploy do
   end
 
   after :publishing, :restart
-  after :publishing, 'unicorn:restart'
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
