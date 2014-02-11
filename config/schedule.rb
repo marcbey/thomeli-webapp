@@ -11,3 +11,7 @@ every 1.minute do
   runner 'PhotoImporter.new.import'
 end
 
+every 1.day do
+  runner 'AssetCleaner.new.clean_up'
+end
+
