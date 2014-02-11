@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140210221918) do
+ActiveRecord::Schema.define(:version => 20140211201647) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20140210221918) do
     t.string   "photo_uid"
     t.integer  "photo_size"
     t.string   "qrcode_dimensions"
+    t.datetime "last_downloaded_at"
   end
 
   create_table "blacklisted_emails", :force => true do |t|

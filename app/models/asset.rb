@@ -18,7 +18,7 @@ class Asset < ActiveRecord::Base
 
   def increment_num_photo_downloads!
     num = self.num_photo_downloads + 1
-    self.update_attributes( num_photo_downloads: num )
+    self.update_attributes( num_photo_downloads: num, last_downloaded_at: Time.now )
   end
 
 
