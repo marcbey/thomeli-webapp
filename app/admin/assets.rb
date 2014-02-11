@@ -34,6 +34,7 @@ ActiveAdmin.register Asset do
   show do |asset|
     attributes_table do
       row :id
+      row :photo_name
       row :url do |asset|
         if asset.photo.present?
           link_to asset.url, asset.url
