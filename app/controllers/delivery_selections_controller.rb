@@ -15,7 +15,7 @@ class DeliverySelectionsController < ApplicationController
       flash[:notice] = t( :photo_wurde_gesendet, email: email ).html_safe
     elsif email_with_wrong_format
 
-      flash[:notice] = t( :email_ist_falsch ).html_safe
+      flash[:alert] = t( :email_ist_falsch ).html_safe
     end
 
     render action: 'index'
