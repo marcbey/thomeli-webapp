@@ -13,7 +13,8 @@ class QrcodesController < ApplicationController
     asset_manager.save!
 
     if params[:embed_url].present?
-      data = asset_manager.asset.qrcode.embed_url( asset_manager.asset, qrcode_manager.url ).data
+      font_size = params[:font_size]
+      data = asset_manager.asset.qrcode.embed_url( asset_manager.asset, qrcode_manager.url, font_size ).data
     else
       data = asset_manager.asset.qrcode.data
     end
