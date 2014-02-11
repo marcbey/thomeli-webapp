@@ -14,8 +14,15 @@ ActiveAdmin.register Asset do
    selectable_column
    column :id
    column :photo_name
-   column :url
+   column :url do |asset|
+     if asset.photo.present?
+       link_to asset.url, asset.url
+      else
+        asset.url
+      end
+   end
    column :created_at
+   column :last_downloaded_at
    column :thumbnail do |asset|
      if asset.photo.present?
        image_tag asset.photo.thumb( '50x50#' ).url
@@ -38,6 +45,7 @@ ActiveAdmin.register Asset do
       row :updated_at
       # row :num_qrcodes_downloads
       row :num_photo_downloads
+      row :last_downloaded_at
       row :qr_code do
         image_tag asset.qrcode.url
       end
