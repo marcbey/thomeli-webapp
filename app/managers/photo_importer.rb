@@ -13,6 +13,8 @@ class PhotoImporter
         self.import_photo( photo_name.to_s )
       end
     end
+  rescue Errno::EACCES => exception
+    Rails.logger.info "Error accessing file: #{exception}"
   end
 
   def import_photo( photo_name )
