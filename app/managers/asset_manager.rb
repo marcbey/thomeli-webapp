@@ -10,12 +10,14 @@ class AssetManager
   def save!
     @asset = Asset.where( photo_name: self.photo_name ).first_or_initialize
 
-    if @asset.new_record?
+    if self.qrcode_manager.dimensions != @asset.qrcode_dimensions
       @asset.qrcode = self.qrcode_manager.qrcode_image.to_s
-      @asset.qrcode.name = Asset::QRCODE_IMAGE_NAME
-      @asset.token = self.qrcode_manager.token
-      @asset.url = self.qrcode_manager.url
+      @asset.qrcode_dimensions = self.qrcode_manager.dimensions
     end
+
+    @asset.qrcode.name = Asset::QRCODE_IMAGE_NAME
+    @asset.token = self.qrcode_manager.token
+    @asset.url = self.qrcode_manager.url
 
     if self.photo_manager.photo_image_exists?
       @asset.photo = self.photo_manager.photo_image

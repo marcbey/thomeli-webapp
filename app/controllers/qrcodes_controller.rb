@@ -4,7 +4,10 @@ class QrcodesController < ApplicationController
     raise ArgumentError, 'photo_name is missing!' if photo_name.blank?
 
     token_manager = TokenManager.new
-    qrcode_manager = QrcodeManager.new( token_manager, photo_name )
+
+    dimensions = params[:dimensions]
+    qrcode_manager = QrcodeManager.new( token_manager, photo_name, dimensions )
+
     photo_manager = PhotoManager.new( photo_name )
     asset_manager = AssetManager.new( qrcode_manager, photo_manager, photo_name )
     asset_manager.save!
