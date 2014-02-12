@@ -9,6 +9,7 @@ class AssetCleaner
     self.assets.each do |asset|
       asset.destroy
     end
+    Rails.logger.info( "Cleaned up #{self.assets.size} assets" )
   end
 end
 
