@@ -1,4 +1,4 @@
-de:
+en:
   download_direkt_im_browser: |
     Download direkt im Browser:
 
@@ -19,6 +19,8 @@ de:
 
   token_ist_falsch: |
     Sorry, dieses Code ist falsch :-(
+
+  photo_email_sender: info@melinat.net
 
   photo_email_subject: Ihre Bilddatei von thorsten melinat photographie
 

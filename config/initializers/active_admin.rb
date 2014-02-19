@@ -19,6 +19,8 @@ ActiveAdmin.setup do |config|
   #
   config.site_title_image = "/assets/logo.png"
 
+  config.before_filter :set_admin_locale
+
   # == Default Namespace
   #
   # Set the default namespace each administration resource
