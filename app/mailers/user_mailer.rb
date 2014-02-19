@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: I18n.t( :photo_email_from )
+  default from: 'info@melinat.net'
 
   def send_photo( email, asset )
     attachments[asset.photo_name] = asset.photo.data
